@@ -1,13 +1,31 @@
-#include <GameLib/Framework.h>
+#include <iostream>
+#include <Windows.h>
 
+int main()
+{
+	const int Row = 7 + 1;
+	const int Colum = 7;
+	char Stage[Colum][Row] = { "  #####",
+							   ".     #",
+							   "# o o #",
+							   "# op# #",
+							   "#   # #",
+							   "#.###. ",
+							   "### ###", };
+	
+	//プレイヤー動かす処理
+	if(GetAsyncKeyState())
 
-namespace GameLib {
-
-	void Framework::update() {
-		unsigned* vram = videoMemory();
-		static unsigned i;
-		vram[i] += i * 100;
-		i += 9973; //1万以下最大の要素
-		i %= (width() * height());
+	for (int i = 0; i < Colum; ++i)
+	{
+		for (int j = 0; j < Row; ++j)
+		{
+			std::cout << Stage[i][j];
+		}
+		std::cout << std::endl;
 	}
+
+	std::cout << std::endl;
+	std::system("PAUSE");
+	return 0;
 }
