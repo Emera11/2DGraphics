@@ -1,24 +1,17 @@
-#include <iostream>
+#include <fstream>
+#include <string>
 
 int main()
 {
-	FILE* fp;
-	const char* filename = "input.txt";
-
-	fopen_s(&fp, filename, "r");
-
-	if (fp == NULL) {
-		std::cout << filename <<"‚ª‚ ‚è‚Ü‚¹‚ñ" << std::endl;
-		return -1;
+	if (std::ifstream fp_input = std::ifstream("input.txt")) {
+		if (std::ofstream fp_output = std::ofstream("output.txt"))
+		{
+			std::string buf;
+			int line_number = 1;
+			while (std::getline(fp_input, buf))
+				fp_output << line_number++ << '\t' << buf << '\n';
+		}
 	}
-
-	char str[100];
-	const char** Stage;
-	while (fgets(str, 100, fp) != NULL) {
-		std::cout << str;
-	}
-	fclose(fp);
 
 	std::system("PAUSE");
-	return 0;
 }
