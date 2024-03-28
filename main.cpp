@@ -28,10 +28,14 @@ namespace GameLib {
 			}
 		}
 		unsigned* vram = videoMemory();
-		unsigned windowWidth = width();
-		for (int y = 0; y < gImageHeight; ++y) {
-			for (int x = 0; x < gImageWidth; ++x) {
-				vram[y * windowWidth + x] = gImageData[y * gImageWidth + x];
+		int windowWidth = width();
+		int windowHeight = height();
+		int partX = 0;
+		int partY = 1;
+		//“K“–‚É32x32‚Ì—Ìˆæ‚Å•~‚«‹l‚ß‚Ü‚·B
+		for (int tileY = 0; tileY + 32 < gImageHeight; tileY += 32) {
+			for (int tileX = 0; tileX + 32 < gImageWidth; tileX += 32) {
+				
 			}
 		}
 	}
