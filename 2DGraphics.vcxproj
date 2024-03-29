@@ -143,7 +143,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SourceFiles\File.cpp" />
+    <ClCompile Include="SourceFiles\Image.cpp" />
+    <ClCompile Include="SourceFiles\main.cpp" />
+    <ClCompile Include="SourceFiles\State.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HeaderFiles\Array2D.h" />
+    <ClInclude Include="HeaderFiles\File.h" />
+    <ClInclude Include="HeaderFiles\State.h" />
+    <ClInclude Include="HeaderFiles\Image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
