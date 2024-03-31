@@ -2,8 +2,7 @@
 #include <fstream>
 using namespace std;
 
-File::File(const char* filename) : mSize(0), mData(0)
-{
+File::File(const char* filename) : mSize(0), mData(0) {
 	ifstream in(filename, ifstream::binary);
 	if (in) {
 		in.seekg(0, ifstream::end);
@@ -14,24 +13,21 @@ File::File(const char* filename) : mSize(0), mData(0)
 	}
 }
 
-File::~File()
-{
+File::~File() {
 	delete[] mData;
 	mData = 0;
 }
 
-int File::size() const
-{
+int File::size() const {
 	return mSize;
 }
 
-const char* File::data() const
-{
+const char* File::data() const {
 	return mData;
 }
 
-unsigned File::getUnsigned(int p) const
-{
+//unsignedéÊÇËèoÇµ
+unsigned File::getUnsigned(int p) const {
 	const unsigned char* up;
 	up = reinterpret_cast<const unsigned char*>(mData);
 	unsigned r = up[p];

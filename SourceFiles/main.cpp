@@ -4,13 +4,11 @@ using namespace GameLib;
 #include "../HeaderFiles/State.h"
 #include "../HeaderFiles/File.h"
 
-
 //関数プロトタイプ
 void mainLoop();
 
 //グローバル変数
 State* gState = 0;
-
 
 //ユーザ実装関数。中身はmainLoop()に丸投げ
 namespace GameLib {
@@ -18,7 +16,6 @@ namespace GameLib {
 		mainLoop();
 	}
 }
-
 
 void mainLoop() {
 	//×ボタン押されてる？
@@ -29,11 +26,10 @@ void mainLoop() {
 		}
 		return;
 	}
-
 	//最初のフレームは初期化。最初の状態を描画して終わり。
 	if (!gState) {
 		File file("stageData.txt");
-		if (!(file.data())) {
+		if (!(file.data())) { //データない！
 			cout << "stage file could not be read." << endl;
 			return;
 		}
@@ -59,7 +55,6 @@ void mainLoop() {
 		Framework::instance().requestEnd();
 		return;
 	}
-
 	//更新
 	gState->update(input);
 	//描画
@@ -72,6 +67,5 @@ void mainLoop() {
 		gState = 0;
 	}
 }
-
 
 
