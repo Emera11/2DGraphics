@@ -10,7 +10,7 @@ class State {
 public:
 	State(const char* stageData, int size);
 	~State();
-	void update(char input);
+	void update(int moveX, int moveY);
 	void draw() const;
 	bool hasCleared() const;
 private:

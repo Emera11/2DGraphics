@@ -100,16 +100,8 @@ void State::drawCell(int x, int y, ImageID id) const {
 }
 
 
-void State::update(char input) {
-	//移動差分に変換
-	int dx = 0;
-	int dy = 0;
-	switch (input) {
-	case 'a': dx = -1; break; //左
-	case 's': dx = 1; break; //右
-	case 'w': dy = -1; break; //上。Yは下がプラス
-	case 'z': dy = 1; break; //下。
-	}
+void State::update(int dx, int dy) {
+
 	//短い変数名をつける。
 	int w = mWidth;
 	int h = mHeight;
