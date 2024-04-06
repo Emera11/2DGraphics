@@ -107,38 +107,46 @@ int main(void)
     //cout << "ˆê”ÔƒpƒC‚É‹ß‚¢‚Ì‚Í" << ii << "/" << jj << "‚Ì" << min << endl;
 
 
-  
     
-    for (int i = 1; i < 100; ++i)
+    /*int a = 0;
+    int b = 0;
+    int tmp = 0;
+
+    cin >> a;
+    cin >> b;
+    */
+    /*while (a > 0)
     {
-        for (int j = 1; j < 100; ++j)
+        tmp = b % a;
+        b = a;
+        a = tmp;
+    }
+    */
+
+    /*
+    while (a % b != 0)
+    {
+        tmp = (a % b);
+        a = b;
+        b = tmp;
+    }
+
+    cout << "Å‘åŒö–ñ”" << b << endl;
+    */
+
+    
+    int array[3][3]{ {1,2,3},{4,5,6},{7,8,9} };
+
+    for (int i = 0; i < 3; ++i)
+    {
+        for (int j = 0; j < 3; ++j)
         {
-            if (my_sqrt(((i * i) + (j * j))) < 100)
-            {
-                cout << i << "*" << j << endl;
-            }
+            cout << array[(j+1) % 3][2-i];
         }
         cout << endl;
-     }
+    }
 
-/*
-int a, b, c;
-        for (a = 1; a < 100; a++)
-        {
-            for (b = a; b < 100; b++)
-            {
-                for (c = b; c < 100; c++)
-                {
-                    if ((a * a) + (b * b) == c * c)
-                    {
-                        cout << a << "*" << b << "=" << c << endl;
-                    }
-                    
-                }
-            }
-            cout << endl;
-        }
-*/
+
 
     system("PAUSE");
 
